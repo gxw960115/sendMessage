@@ -74,7 +74,6 @@ public class SendMessage {
             //获取响应体，响应数据是一种基于HTTP协议标准字符串的对象
             //响应体和响应头，都是封装HTTP协议数据。直接使用可能出现乱码或解析错误
             HttpEntity entity = response.getEntity();
-            System.out.println(entity);
             // 通过HTTP实体工具类，转换响应体数据
             String resourceString = EntityUtils.toString(entity);
             return resourceString;
