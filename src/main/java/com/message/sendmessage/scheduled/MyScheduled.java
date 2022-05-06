@@ -22,20 +22,6 @@ public class MyScheduled {
     @Autowired
     private SendMessage sendMessage;
 
-//    @Scheduled(cron = "0 00 22 * * *")
-//    public void startup() {
-//        String message = SendMessage.getMail();
-//        sendMessage.SendMessage("天冷了多加衣，爱你的旺旺", message);
-//        System.out.print(new Date().toLocaleString() + " 发送消息：" + message);
-//    }
-//
-//    @Scheduled(cron = "0 00 07 * * *")
-//    public void startup1() {
-//        String message = SendMessage.getMail();
-//        sendMessage.SendMessage("天冷了多加衣，爱你的旺旺", message);
-//        System.out.print(new Date().toLocaleString() + " 发送消息：" + message);
-//    }
-
     @Scheduled(cron = "0 */1 * * * ?")
     public void startup1() {
 
