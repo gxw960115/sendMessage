@@ -33,8 +33,7 @@ public class MyScheduled {
         String[] split = replace.split(",");
         String s = split[0];
         String[] split1 = s.split(":");
-        String message = split1[1].replace("\"","");
-        System.out.println(message);
+        String message = split1[1].replace("\"", "");
         sendMessage.SendMessage("世良世良，收到请回答", message);
 
         System.out.print(new Date().toLocaleString() + " 发送消息：" + message);
