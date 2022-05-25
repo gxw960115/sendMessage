@@ -8,7 +8,28 @@ spring:
         smtp:
           auth: true         # 开启smtp协议验证
     port: 587
+  datasource:
+    driver-class-name: com
 # 发给谁的邮箱
 she:
-#  mail: 1972335294@qq.com
+#  mail: 694968015@qq.com
   mail: 431397435@qq.com
+  title: 打卡提醒
+  message: 温馨提醒：
+    快下班了别忘记打卡呀！
+    爱你呦！
+  title1: 填写日志提醒
+  message1: 温馨提醒：
+    快下班了别忘记填写日志呀！
+    爱你呦！
+  title2: 打卡提醒
+  message2: 温馨提醒：
+    下班了别忘记打卡呀！
+    爱你呦！
+  title3: 填写日志提醒
+  message3: 温馨提醒：
+    下班了别忘记填写日志呀！
+    爱你呦！
+  hour: 18
+  minute: 00
+  second: 00
