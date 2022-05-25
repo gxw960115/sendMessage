@@ -61,11 +61,10 @@ public class MyScheduled {
         }
     }
 
-    //    @Scheduled(cron = "0 0/30 9,10,11,12,13,14,15,16,17,18 * * ?")
-    @Scheduled(cron = "0 0/1 * * * ?")
+    @Scheduled(cron = "0 0/30 9,10,11,12,13,14,15,16,17,18 * * ?")
     public void startup2() {
         sendMessage.SendMessage("喝水提醒", "天气炎热！莫生气！莫激动！\n又到喝水时间了！多多喝水呀！");
-        System.out.println("发给 " + who + " 的 喝水提醒 已于 " + new Date().toLocaleString() + " 发送");
+        System.out.println("发给 " + who.replace(",", " 和 ") + " 的 喝水提醒 已于 " + new Date().toLocaleString() + " 发送");
     }
 
     //    @Scheduled(cron = "0 0/1 * * * ?")
