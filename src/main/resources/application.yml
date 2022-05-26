@@ -1,4 +1,8 @@
 spring:
+  profiles:
+    active: dev
+  application:
+    name: SendMessage
   mail:
     username: 3174646530@qq.com # 邮箱地址
     password: hwjhmufesibjdggd  # SMTP|POP3|IMAP协议授权码
@@ -8,21 +12,15 @@ spring:
         smtp:
           auth: true         # 开启smtp协议验证
     port: 587
-  datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    username: root
-    password: 123456
-    url: jdbc:mysql://localhost:3306/sendmessage?useUnicode=true&characterEncoding=utf8&zeroDateTimeBehavior=convertToNull&useSSL=true&serverTimezone=GMT%2B8
-  # mybatis配置
 mybatis:
-    # 搜索指定包别名
-  typeAliasesPackage: com/message/sendmessage
-    # 配置mapper的扫描，找到所有的mapper.xml映射文件
+  # 搜索指定包别名
+  typeAliasesPackage: com/message/sendmessage/entity.*
+  # 配置mapper的扫描，找到所有的mapper.xml映射文件
   mapperLocations: classpath:mapper/**/*.xml
 # 发给谁的邮箱
 she:
+  #  694968015@qq.com,
   mail: 431397435@qq.com
-  #694968015@qq.com,
   title: 打卡提醒
   message: 温馨提醒：
     快下班了别忘记打卡呀！
@@ -42,3 +40,10 @@ she:
   hour: 18
   minute: 00
   second: 00
+
+logging:
+  level:
+    com:
+      message:
+        sendmessage:
+          mapper: debug
