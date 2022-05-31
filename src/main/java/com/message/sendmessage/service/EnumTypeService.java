@@ -14,7 +14,13 @@ import java.util.List;
  */
 //@Service
 public interface EnumTypeService {
-    public List<EnumType> search();
+    List<EnumType> search();
 
     int save1(EnumType enumType);
+
+    int upd(EnumType enumType);
+
+    int del(EnumType enumType);
+
+    int delBach(String ids);
 }

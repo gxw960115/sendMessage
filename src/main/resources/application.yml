@@ -20,7 +20,7 @@ mybatis:
 # 发给谁的邮箱
 she:
   #  694968015@qq.com,
-  mail: 431397435@qq.com
+  mail: 694968015@qq.com,431397435@qq.com
   title: 打卡提醒
   message: 温馨提醒：
     快下班了别忘记打卡呀！

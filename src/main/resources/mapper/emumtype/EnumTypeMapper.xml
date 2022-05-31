@@ -10,15 +10,45 @@
     </resultMap>
 
     <sql id="enumTypeCol">
-        enum_id,enum_name,enum_value,enum_desc
+        enum_id
+        ,enum_name,enum_value,enum_desc
     </sql>
 
-    <select id="search"  resultType="com.message.sendmessage.entity.EnumType" parameterType="com.message.sendmessage.entity.EnumType">
-        select * from enum_type
+    <select id="search" resultMap="enumTypeResult" flushCache="true">
+        select *
+        from enum_type
     </select>
 
     <insert id="save1" parameterType="com.message.sendmessage.entity.EnumType">
-        insert into enum_type (enum_id,enum_name,enum_value,enum_desc) values (#{enumId},#{enumName},#{enumValue},#{enumDesc})
+        insert into enum_type (enum_id, enum_name, enum_value, enum_desc)
+        values (#{enumId}, #{enumName}, #{enumValue}, #{enumDesc})
     </insert>
+
+    <update id="upd" parameterType="com.message.sendmessage.entity.EnumType">
+        update enum_type set
+        <if test="enumName!=null and enumName !=''">enum_name = #{enumName},</if>
+        <if test="enumValue!=null and enumValue !=''">enum_value = #{enumValue},</if>
+        <if test="enumDesc!=null and enumDesc !=''">enum_desc = #{enumDesc}</if>
+        <where>
+            enum_id = #{enumId}
+        </where>
+    </update>
+
+    <delete id="del" parameterType="com.message.sendmessage.entity.EnumType">
+        delete from enum_type
+        <where>
+            enum_id = #{enumId}
+        </where>
+    </delete>
+
+    <delete id="delBach" parameterType="java.util.List">
+        delete from enum_type
+        <where>
+            enum_id in
+            <foreach item="id" collection="ids" open="(" close=")" separator=",">
+                #{id}
+            </foreach>
+        </where>
+    </delete>
 
 </mapper>

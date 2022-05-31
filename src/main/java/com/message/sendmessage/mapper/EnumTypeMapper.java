@@ -16,4 +16,10 @@ public interface EnumTypeMapper {
     int save1(EnumType enumType);
 
     List<EnumType> search();
+
+    int upd(EnumType enumType);
+
+    int del(EnumType enumType);
+
+    int delBach(List<String> ids);
 }

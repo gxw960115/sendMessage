@@ -6,6 +6,7 @@ import com.message.sendmessage.service.EnumTypeService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -30,5 +31,25 @@ public class EnumTypeServiceImpl implements EnumTypeService {
     @Override
     public int save1(EnumType enumType) {
         return enumTypeMapper.save1(enumType);
+    }
+
+    @Override
+    public int upd(EnumType enumType) {
+        return enumTypeMapper.upd(enumType);
+    }
+
+    @Override
+    public int del(EnumType enumType) {
+        return enumTypeMapper.del(enumType);
+    }
+
+    @Override
+    public int delBach(String ids) {
+        List<String> list = new ArrayList<>();
+        String[] id = ids.split(",");
+        for (int i = 0; i < id.length; i++) {
+            list.add(id[i]);
+        }
+        return enumTypeMapper.delBach(list);
     }
 }
